@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A modern student portal demo.">
+  <title>Campusly — Student Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="Campusly home"><span class="brand-mark">C</span><span>campusly</span></a>
+      <div class="side-label">MENU</div>
+      <nav class="nav-menu" aria-label="Main navigation">
+        <button class="nav-item active" data-view="dashboard"><span class="nav-icon">▦</span>Dashboard</button>
+        <button class="nav-item" data-view="schedule"><span class="nav-icon">▤</span>Class Schedule</button>
+        <button class="nav-item" data-view="grades"><span class="nav-icon">▥</span>Grades</button>
+        <button class="nav-item" data-view="announcements"><span class="nav-icon">◉</span>Announcements<span class="nav-count">3</span></button>
+        <button class="nav-item" data-view="profile"><span class="nav-icon">◎</span>Student Profile</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">✦</div><strong>Need a hand?</strong><p>We're here to help you stay on track.</p><button id="helpButton">Visit help center <span>↗</span></button></div>
+        <div class="side-user"><div class="avatar small">AM</div><div><strong>Alex Morgan</strong><span>Student account</span></div><span class="dots">•••</span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuButton" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb">Pages <span>/</span> <strong id="currentPage">Dashboard</strong></div>
+        <div class="top-actions"><button class="icon-button" id="notificationButton" aria-label="Notifications">♧<i></i></button><div class="top-divider"></div><div class="top-profile"><div class="avatar tiny">AM</div><span>Alex Morgan</span><span class="chevron">⌄</span></div></div>
+      </header>
+
+      <section class="content">
+        <div class="page-view active" id="dashboardView">
+          <div class="welcome-row"><div><div class="eyebrow">TUESDAY, NOVEMBER 25, 2026</div><h1>Good morning, Alex <span class="wave">✦</span></h1><p class="subheading">Here's what's happening with your studies today.</p></div><button class="date-pill">◷ &nbsp; Fall Semester 2026 <span>⌄</span></button></div>
+          <div class="stats-grid">
+            <article class="stat-card"><div class="stat-top"><span>Enrolled courses</span><span class="stat-icon violet">▤</span></div><div class="stat-number">6 <small>courses</small></div><div class="stat-foot"><span class="dot green"></span> You're all caught up</div></article>
+            <article class="stat-card"><div class="stat-top"><span>Current GPA</span><span class="stat-icon blue">✧</span></div><div class="stat-number">3.72 <small>/ 4.00</small></div><div class="stat-foot positive">↑ 0.18 <span>from last semester</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>Attendance</span><span class="stat-icon orange">◷</span></div><div class="stat-number">96<small>%</small></div><div class="progress"><span style="width:96%"></span></div><div class="stat-foot">Excellent attendance</div></article>
+            <article class="stat-card"><div class="stat-top"><span>Pending tasks</span><span class="stat-icon pink">☷</span></div><div class="stat-number">4 <small>tasks</small></div><div class="stat-foot"><span class="dot orange-dot"></span> 2 due this week</div></article>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="panel schedule-panel"><div class="panel-heading"><div><h2>Today's schedule</h2><p>Your classes for Tuesday</p></div><button class="text-link" data-goto="schedule">View schedule <span>→</span></button></div>
+              <div class="class-list">
+                <div class="class-item"><div class="time">08:00<span>AM</span></div><div class="class-line purple-line"></div><div class="class-info"><strong>Introduction to Computing</strong><span>Room 204 · Prof. Olivia Bennett</span></div><span class="class-tag in-progress">In progress</span></div>
+                <div class="class-item"><div class="time">10:30<span>AM</span></div><div class="class-line blue-line"></div><div class="class-info"><strong>Programming Fundamentals</strong><span>Computer Lab 2 · Prof. Ethan Cole</span></div><span class="class-tag upcoming">Upcoming</span></div>
+                <div class="class-item"><div class="time">01:00<span>PM</span></div><div class="class-line orange-line"></div><div class="class-info"><strong>Understanding the Self</strong><span>Room 108 · Prof. Sophia Reed</span></div></div>
+                <div class="class-item"><div class="time">03:00<span>PM</span></div><div class="class-line green-line"></div><div class="class-info"><strong>Purposive Communication</strong><span>Room 301 · Prof. Lucas Gray</span></div></div>
+              </div>
+            </section>
+            <section class="panel announcements-panel"><div class="panel-heading"><div><h2>Announcements</h2><p>Latest updates from campus</p></div><button class="more-button" aria-label="More announcements">•••</button></div>
+              <div class="announcement"><div class="announcement-symbol purple-bg">▣</div><div><div class="announcement-meta">ACADEMIC OFFICE <span>2 hours ago</span></div><strong>Midterm examination schedule</strong><p>The midterm examination schedule is now available. Check your course page for details.</p></div></div>
+              <div class="announcement"><div class="announcement-symbol orange-bg">✦</div><div><div class="announcement-meta">STUDENT AFFAIRS <span>Yesterday</span></div><strong>Campus activities week</strong><p>Join us for a week of activities, workshops, and student performances.</p></div></div>
+              <div class="announcement"><div class="announcement-symbol blue-bg">⌂</div><div><div class="announcement-meta">LIBRARY <span>Nov 22, 2026</span></div><strong>Extended library hours</strong><p>The library will remain open until 9:00 PM during examination week.</p></div></div>
+              <button class="all-announcements" data-goto="announcements">See all announcements <span>→</span></button>
+            </section>
+          </div>
+          <section class="panel tasks-panel"><div class="panel-heading"><div><h2>Upcoming assignments</h2><p>Keep an eye on your deadlines</p></div><button class="text-link" data-goto="grades">View courses <span>→</span></button></div>
+            <div class="task-table"><div class="task-row task-header"><span>ASSIGNMENT</span><span>COURSE</span><span>DUE DATE</span><span>STATUS</span></div>
+              <div class="task-row"><strong>HTML & CSS mini project</strong><span>Web Development</span><span>Nov 27, 2026</span><span class="status-badge due">Due soon</span></div>
+              <div class="task-row"><strong>Programming exercise #4</strong><span>Programming Fundamentals</span><span>Nov 29, 2026</span><span class="status-badge pending">In progress</span></div>
+              <div class="task-row"><strong>Reflection paper</strong><span>Understanding the Self</span><span>Dec 02, 2026</span><span class="status-badge pending">Not started</span></div>
+            </div>
+          </section>
+        </div>
+
+        <div class="page-view" id="scheduleView"><div class="page-title"><div class="eyebrow">YOUR LEARNING PLAN</div><h1>Class Schedule</h1><p class="subheading">Your weekly class timetable for Fall Semester 2026.</p></div><section class="panel"><div class="panel-heading"><div><h2>Weekly timetable</h2><p>Monday – Friday · All times are local</p></div><span class="date-pill">Fall Semester 2026</span></div><div class="table-wrap"><table><thead><tr><th>DAY</th><th>TIME</th><th>COURSE</th><th>ROOM</th><th>INSTRUCTOR</th></tr></thead><tbody>
+          <tr><td>Monday</td><td>08:00 – 09:30 AM</td><td>Web Development</td><td>Lab 1</td><td>Prof. Olivia Bennett</td></tr><tr><td>Monday</td><td>10:00 – 11:30 AM</td><td>Mathematics in the Modern World</td><td>Room 205</td><td>Prof. Noah Parker</td></tr>
+          <tr><td>Tuesday</td><td>08:00 – 09:30 AM</td><td>Introduction to Computing</td><td>Room 204</td><td>Prof. Olivia Bennett</td></tr><tr><td>Tuesday</td><td>10:30 – 12:00 PM</td><td>Programming Fundamentals</td><td>Lab 2</td><td>Prof. Ethan Cole</td></tr><tr><td>Tuesday</td><td>01:00 – 02:30 PM</td><td>Understanding the Self</td><td>Room 108</td><td>Prof. Sophia Reed</td></tr>
+          <tr><td>Wednesday</td><td>09:00 – 10:30 AM</td><td>Purposive Communication</td><td>Room 301</td><td>Prof. Lucas Gray</td></tr><tr><td>Thursday</td><td>08:00 – 09:30 AM</td><td>Web Development</td><td>Lab 1</td><td>Prof. Olivia Bennett</td></tr><tr><td>Friday</td><td>10:00 – 11:30 AM</td><td>Mathematics in the Modern World</td><td>Room 205</td><td>Prof. Noah Parker</td></tr>
+        </tbody></table></div></section></div>
+
+        <div class="page-view" id="gradesView"><div class="page-title"><div class="eyebrow">ACADEMIC PERFORMANCE</div><h1>My Grades</h1><p class="subheading">Track your progress across all enrolled courses.</p></div><div class="grade-summary"><div class="stat-card"><span class="muted">Current GPA</span><div class="stat-number">3.72 <small>/ 4.00</small></div><span class="positive">↑ 0.18 from last semester</span></div><div class="stat-card"><span class="muted">Completed units</span><div class="stat-number">18 <small>units</small></div><span class="muted">Across 6 courses</span></div><div class="stat-card"><span class="muted">Academic standing</span><div class="stat-number standing">Good</div><span class="muted">Keep up the great work!</span></div></div><section class="panel"><div class="panel-heading"><div><h2>Course grades</h2><p>Preliminary grades · Fall Semester 2026</p></div></div><div class="table-wrap"><table><thead><tr><th>COURSE</th><th>INSTRUCTOR</th><th>GRADE</th><th>REMARKS</th></tr></thead><tbody><tr><td>Introduction to Computing</td><td>Olivia Bennett</td><td><b class="grade">3.8</b></td><td><span class="status-badge completed">Very Good</span></td></tr><tr><td>Programming Fundamentals</td><td>Ethan Cole</td><td><b class="grade">3.6</b></td><td><span class="status-badge completed">Very Good</span></td></tr><tr><td>Web Development</td><td>Olivia Bennett</td><td><b class="grade">3.9</b></td><td><span class="status-badge completed">Excellent</span></td></tr><tr><td>Mathematics in the Modern World</td><td>Noah Parker</td><td><b class="grade">3.5</b></td><td><span class="status-badge completed">Good</span></td></tr><tr><td>Understanding the Self</td><td>Sophia Reed</td><td><b class="grade">3.8</b></td><td><span class="status-badge completed">Very Good</span></td></tr><tr><td>Purposive Communication</td><td>Lucas Gray</td><td><b class="grade">3.7</b></td><td><span class="status-badge completed">Very Good</span></td></tr></tbody></table></div></section></div>
+
+        <div class="page-view" id="announcementsView"><div class="page-title"><div class="eyebrow">CAMPUS NEWS & UPDATES</div><h1>Announcements</h1><p class="subheading">Stay informed about what's happening around campus.</p></div><section class="panel announcement-feed"><article class="feed-item"><div class="announcement-symbol purple-bg">▣</div><div><div class="announcement-meta">ACADEMIC OFFICE · NOV 25, 2026</div><h3>Midterm examination schedule</h3><p>The midterm examination schedule is now available. Please check your course pages and coordinate with your instructors for room assignments.</p><span class="feed-tag">Academic</span></div></article><article class="feed-item"><div class="announcement-symbol orange-bg">✦</div><div><div class="announcement-meta">STUDENT AFFAIRS · NOV 24, 2026</div><h3>Campus activities week</h3><p>Join us for a week of activities, workshops, and student performances. Registration is open at the Student Affairs Office.</p><span class="feed-tag">Campus life</span></div></article><article class="feed-item"><div class="announcement-symbol blue-bg">⌂</div><div><div class="announcement-meta">LIBRARY · NOV 22, 2026</div><h3>Extended library hours</h3><p>The library will remain open until 9:00 PM during examination week to give students more time to study.</p><span class="feed-tag">Facilities</span></div></article><article class="feed-item"><div class="announcement-symbol green-bg">✓</div><div><div class="announcement-meta">REGISTRAR · NOV 20, 2026</div><h3>Reminder: Verify your student information</h3><p>Please review your student profile and report any corrections to the Registrar's Office before the end of the month.</p><span class="feed-tag">Reminder</span></div></article></section></div>
+
+        <div class="page-view" id="profileView"><div class="page-title"><div class="eyebrow">PERSONAL INFORMATION</div><h1>Student Profile</h1><p class="subheading">Your student information at a glance.</p></div><section class="panel profile-card"><div class="profile-cover"></div><div class="profile-main"><div class="avatar profile-avatar">AM</div><div><h2>Alex Morgan</h2><p>BS Information Technology · First Year</p><span class="profile-status"><i></i> Active Student</span></div></div><div class="profile-details"><div><span>STUDENT ID</span><strong>2026-10482</strong></div><div><span>EMAIL ADDRESS</span><strong>alex.morgan@example.edu</strong></div><div><span>PROGRAM</span><strong>Bachelor of Science in Information Technology</strong></div><div><span>YEAR LEVEL</span><strong>First Year</strong></div><div><span>ACADEMIC YEAR</span><strong>2026 – 2027</strong></div><div><span>COLLEGE</span><strong>College of Computing Studies</strong></div></div></section></div>
+        <footer>© 2026 Campusly Student Portal <span>Made for learning · Demo student information</span></footer>
+      </section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
